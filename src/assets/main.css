@@ -11,7 +11,21 @@ body{
     content: '\a0';
     color: #ffff !important;
 }
-
+.ant-layout-sider-children {
+    padding-left: 20px;
+}
+.ant-layout-sider-children a  {
+    color: #fff;
+}
+input.w-100.todoItem {
+    background: #120d3c;
+    border: 1px solid #120d3c;
+    padding: 5px;
+    border-radius: 5px;
+}
+.flex.sidbarmenu {
+    background: #261a65 !important;
+}
 .form {
     background: #fff;
     width: 50%;

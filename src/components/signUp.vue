@@ -1,6 +1,6 @@
 <template>
 <div class="form">
-            <h3 class="f36-400">Sign up</h3>
+            <h3 class="f36-400">{{ $t('message.Signup') }}</h3>
             <a-form
                     :model="users.formState"
                     name="nest-messages"
@@ -46,15 +46,4 @@ const users = useCheckUser()
 </script>
 
 <style scoped>
-    .form {
-        background: #ffff;
-        width: 50%;
-        height: 50%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-        border-radius: 16px;
-    }
 </style>

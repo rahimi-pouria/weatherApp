@@ -1,7 +1,7 @@
 <template>
     <div v-for="(item , index) in todo.listTodo" :key="index" 
     class="d-flex flex-column">
-        <div class="d-flex show-todo p-4 r-12 shadow">
+        <div class="flex show-todo p-4 r-12 shadow">
             <p 
             class="f14-400">
                     {{ item.name }}

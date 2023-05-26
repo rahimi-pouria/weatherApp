@@ -1,11 +1,11 @@
 <template>
     <div class="w-100">
-        <div class="w-100 headerApp">
+        <div class="w-100 headerApp" dir="auto">
             <span class="f18-400">
-                userName: 
+                {{ $t('message.userName') }}: 
                 {{ getUserName }}
             </span>
-            <a-button @click="showMenu" class="show-menu">menu</a-button>
+            <a-button @click="showMenu" class="show-menu">{{ $t('message.menu') }}</a-button>
         </div>
         <!-- show menu in mobile -->
         <div class="w-100 hambur-menu" 
@@ -34,33 +34,4 @@ const showMenu = () => {
 
 <style scoped>
 
-.hambur-menu{
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    padding: 10px 0;
-}
-
-.hambur-menu a{
-    color: #fff !important;
-}
-button.ant-btn.show-menu {
-    background: #302668 !important;
-    color: #fff;
-}
-/* responsive */
-
-@media screen and (max-width: 600px){
-    .responsiveMenu{
-        display: none;
-    }
-}
-@media screen and (min-width: 1024px){
-    .responsiveMenu{
-        display: none;
-    }
-    button.ant-btn.show-menu {
-        display: none;
-    }
-}
 </style>

@@ -1,7 +1,7 @@
 <template>
-<a-layout class="setting" id="changeTheme" style="min-height: 100vh">
+    <a-layout class="setting" id="changeTheme" style="min-height: 100vh">
         <div class="showDataPage">
-            
+
             <sidbar />
         </div>
         <div class="setting w-100">
@@ -11,57 +11,31 @@
             </div>
             <!-- show data page body -->
             <div class="flex w-100 g8 bodySetting" id="bodyPage">
-                <div class="flex w-50 g8 chooseData">
-                    <span class="f18-400 nameSetting">change name</span>
-                    <a-input v-model:value="changeName"
-                    placeholder="add name" 
-                    class="selectOptions w-50"
-                    />
+                <div class="flex w-50 g8 chooseData" dir="auto">
+                    <span class="f18-400 nameSetting">{{ $t('message.changeName') }}</span>
+                    <a-input v-model:value="changeName" placeholder="add name" class="selectOptions w-50" />
                 </div>
-                <div class="flex w-50 g8 chooseData">
-                    <span class="f18-400 nameSetting">change Theme</span>
-                    <a-select
-                        ref="select"
-                        style="width: 100%"
-                        @focus=""
-                        @change=""
-                        v-model:value="theme"
-                        class="selectOptions"
-                        >
-                        <a-select-option v-for="(item, i) in thems"
-                        :key="i" 
-                        :value="item.name">
-                        {{ item.name }}
-                        </a-select-option>
-                    </a-select>
-                </div>
-                <div class="flex w-50 g8 chooseData">
-                    <span class="f18-400 nameSetting">change languagh</span>
-                    <a-select
-                        ref="select"
-                        style="width: 100%"
-                        @focus=""
-                        @change=""
-                        class="selectOptions"
-                        v-model:value="lang"
-                        >
-                        <a-select-option v-for="(item, i) in languaghs" :key="i" 
-                        :value="item.name">
+                <div class="flex w-50 g8 chooseData" dir="auto">
+                    <span class="f18-400 nameSetting">{{ $t('message.changeTheme') }}</span>
+                    <a-select ref="select" style="width: 100%" v-model:value="theme" class="selectOptions">
+                        <a-select-option v-for="(item, i) in thems" :key="i" :value="item.name">
                             {{ item.name }}
                         </a-select-option>
                     </a-select>
-
-                    <form>
-                        <select v-model="$i18n.locale">
-                            <option value="">en</option>
-                            <option value="">fa</option>
+                </div>
+                <div class="flex w-50 g8 chooseData" dir="auto">
+                    <span class="f18-400 nameSetting">
+                    {{ $t('message.changeLanguagh') }}</span>
+                </div>
+                <form class="w-50">
+                        <select class="selectOptions w-100" v-model="$i18n.locale">selectlanguage
+                            <option value="en">en</option>
+                            <option value="fa">fa</option>
                         </select>
                     </form>
-                </div>
                 <div class="flex w-50 g8">
-                    <a-button @click="changes" 
-                    type="primary">
-                    apply changes</a-button>
+                    <a-button @click="changes" type="primary">
+                        {{ $t('message.applyChange') }}</a-button>
                 </div>
             </div>
         </div>
@@ -69,46 +43,32 @@
 </template>
 
 <script setup lang="ts">
-    import { ref } from 'vue';
-    import sidbar from '@/components/sidbar.vue'
-    import HeaderPage from '@/components/headerPage.vue'
-    import createi18n from 'vue-i18n';
+
+import { ref } from 'vue';
+import sidbar from '@/components/sidbar.vue';
+import HeaderPage from '@/components/headerPage.vue';
 
 
-    let changeName = ref('')
-    let theme = ref('')
-let lang = ref('')
-    //@ts-ignore
-    const $i18n = createi18n()
-    const thems = ref([
+let changeName = ref('')
+let theme = ref('')
+const thems = ref([
     {
         value: 0,
-        name: "darkBlue"    
-        },
-        {
-            value: 1,
-        name: "lightBlue"    
-    }
-    ])
-const languaghs = ref([
-    {
-        value: 0,
-        name: 'en'
+        name: "darkBlue"
     },
     {
         value: 1,
-        name: 'fa'
+        name: "lightBlue"
     }
 ])
 
-
-const changes = () => { 
+const changes = () => {
     let sidbarmenu = document.getElementById('sidbarmenu')
     let changeTheme = document.querySelector('#changeTheme')
     let headerPage = document.getElementById('headerPage')
     let bodyPage = document.getElementById('bodyPage')
     localStorage.setItem('name', changeName.value)
-    if (theme.value === 'lightBlue') { 
+    if (theme.value === 'lightBlue') {
         sidbarmenu?.classList.add('ant-layout-sider')
         changeTheme?.classList.add('ant-layout')
         sidbarmenu?.classList.remove('sidbarmenu-dark')
@@ -118,7 +78,7 @@ const changes = () => {
         bodyPage?.classList.add('bodySetting')
         bodyPage?.classList.remove('bodySetting-dark')
         console.log('lightBlue')
-    } if (theme.value === 'darkBlue') { 
+    } if (theme.value === 'darkBlue') {
         sidbarmenu?.classList.remove('ant-layout-sider')
         changeTheme?.classList.remove('ant-layout')
         sidbarmenu?.classList.add('sidbarmenu-dark')
@@ -138,6 +98,7 @@ const changes = () => {
     gap: 17px;
     padding: 15px;
 }
+
 .bodySetting {
     background: #1b1350;
     height: 80vh;
@@ -146,27 +107,34 @@ const changes = () => {
     justify-content: center;
     align-items: center;
 }
-.selectOptions{
+
+.selectOptions {
     border: 1px solid #251963;
     padding: 6px;
     border-radius: 8px;
     background: #2a1f65;
+    padding: 10px;
 }
-.nameSetting{
+
+.nameSetting {
     color: #fff;
 }
-.chooseData{
+
+.chooseData {
     display: flex;
     flex-direction: column;
     gap: 15px;
 }
-.themeBlue{
+
+.themeBlue {
     background-color: #1c203d !important;
 }
-.sidbar{
+
+.sidbar {
     background-color: #272c4a !important;
 }
-.feature{
+
+.feature {
     background-color: #2a2b4a !important;
 }
 </style>

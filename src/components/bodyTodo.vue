@@ -24,7 +24,7 @@
                 </div>
             <!-- btn form validation -->
             <button class="btn-add-todo w-30">
-             add todo
+             {{ $t('message.addTodo') }}
             </button>
             </form>
         </div>
@@ -58,49 +58,4 @@
 </script>
 
 <style scoped>
-    .search-todo{
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
-    }
-    .addItem{
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
-    }
-    .todoItem[data-v-8ced2bb8] {
-        border: 1px solid #251963;
-        padding: 6px;
-        border-radius: 8px;
-        background: #2a1f65;
-    }
-.todoItem:focus {
-    border: 1px solid #e7e7e7;
-    padding: 6px;
-    border-radius: 8px;
-}
-.todoItem:focus-visible {
-    border: 1px solid #e7e7e7;
-    padding: 6px;
-    border-radius: 8px;
-}
-.btn-add-todo.w-30 {
-    background: #5698e9;
-    border: 1px solid #5698e9;
-    padding: 7px;
-    border-radius: 5px;
-}
-.show-todo a {
-    color: #fff;
-}
-.addTodoItem{
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-}
-.items-todo{
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-}
 </style>

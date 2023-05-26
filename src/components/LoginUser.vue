@@ -10,7 +10,7 @@
                 <a-form-item
                 label="Username"
                 name="username"
-                :rules="[{ required: true, message: 'Please input your username!' }]"
+                :rules="[{ required: true, message: $t('message.Pleaseinputyourusername') }]"
                 >
                 <a-input class="userName" v-model:value="login.formState.username">
                     <template #prefix>
@@ -21,7 +21,7 @@
                 <a-form-item
                 label="Password"
                 name="password"
-                :rules="[{ required: true, message: 'Please input your password!' }]"
+                :rules="[{ required: true, message: $t('message.Pleaseinputyourpassword') }]"
                 >
                     <a-input-password class="Passwoed" v-model:value="login.formState.password">
                         <template #prefix>
@@ -30,7 +30,7 @@
                     </a-input-password>
                 </a-form-item>
                 <a-form-item :wrapper-col="{ span: 14, offset: 4 }">
-                   <a-button type="primary" html-type="submit">Submit</a-button>
+                   <a-button type="primary" html-type="submit">{{ $t('message.Submit') }}</a-button>
                 </a-form-item>
             </a-form>
         </div>

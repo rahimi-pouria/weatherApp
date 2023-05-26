@@ -14,13 +14,14 @@
                 <div class="d-flex getNameCity w-50">
                     <a-input placeholder="name city"
                      v-model:value="nameCity" /> 
-                    <a-button @click="getWeather" type="primary">get Name</a-button>
+                    <a-button @click="getWeather" type="primary">{{ $t('message.getName') }}</a-button>
                 </div>
                 <!-- show weather city -->
                 <div class="flex showDataWrather">
-                    <span>temperature: 
-                    {{ temperature }}</span>
-                    <span>Day: 
+                    <span>{{ $t('message.temperature') }}: 
+                      {{ temperature }}
+                    </span>
+                    <span>{{ $t('message.Day') }}: 
                     {{ day }}</span>
                 </div>
             </div>

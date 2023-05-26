@@ -1,0 +1,19 @@
+[
+    {
+        "Dashboard": "داشبورد",
+        "WorkList": "لیست کارها",
+        "Weather" : "آب و هوا",
+        "setting" : "تنظیمات",
+        "Login" : "ورود",
+        "Good Morning" : "صبح بخیر",
+        "temperature" : "دما",
+        "Day" : "روز",
+        "get Name" : "دریافت نام",
+        "add Todo" : "اضافه کردن کار",
+        "menu" : "منو",
+        "Please input your username" : "لطفا نام کاربری خود را وارد کنید",
+        "Please input your password" : "لطفا رمز عبور خود را وارد کنید",
+        "Submit" : "ارسال",
+        "Sign up" : "ثبت نام"
+    }
+]

@@ -1,0 +1,19 @@
+[
+    {
+        "Dashboard": "Dashboard",
+        "WorkList": " WorkList",
+        "Weather" : "Weather",
+        "setting" : "setting",
+        "Login" : "Login",
+        "Good Morning" : "Good Morning",
+        "temperature" : "temperature",
+        "Day" : "Day",
+        "get Name" : "get Name",
+        "add Todo" : "add Todo",
+        "menu" : "menu",
+        "Please input your username" : "Please input your username",
+        "Please input your password" : "Please input your password",
+        "Submit" : "Submit",
+        "Sign up" : "Sign up"
+    }
+]

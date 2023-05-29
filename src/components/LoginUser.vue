@@ -4,7 +4,7 @@
             <a-form
                     :model="login.formState"
                     name="nest-messages"
-                    @finish="login.login"
+                    @submit.prevent="login.login"
                     @finishFailed="login.onFinishFailed"
     >              
                 <a-form-item

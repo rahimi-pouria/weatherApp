@@ -1,7 +1,6 @@
 <template>
     <a-layout class="sidbarMenu" id="changeTheme" style="min-height: 100vh">
         <div class="showDataPage">
-            
             <sidbar />
         </div>
         <div class="dashboard w-100">
@@ -13,7 +12,7 @@
             <div class="flex w-100 g8 bodySetting" id="bodyPage">
                 <span class="f18-400">{{ getHour }}</span>
                 <p class="f16-700">
-                    Good Morning: {{ getUserName }}
+                    {{ $t('message.GoodMorning') }}: {{ getUserName }}
                 </p>
             </div>
         </div>
@@ -23,17 +22,8 @@
 
 
 <script setup lang="ts">
-import { ref } from 'vue';
 import sidbar from '@/components/sidbar.vue'
 import HeaderPage from '@/components/headerPage.vue'
-import {
-  PieChartOutlined,
-  DesktopOutlined,
-  UserOutlined,
-  TeamOutlined,
-    FileOutlined,
-} from '@ant-design/icons-vue';
-
 
 const times = new Date();
 const getHour = times.getHours() + ':' + times.getMinutes()

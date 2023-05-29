@@ -8,21 +8,27 @@
             <a-button @click="showMenu" class="show-menu">{{ $t('message.menu') }}</a-button>
         </div>
         <!-- show menu in mobile -->
-        <div class="w-100 hambur-menu" 
+        <div dir="auto" class="w-100 hambur-menu" 
         :class="{'responsiveMenu' : show}">
-                <div v-for="(item, i) in reponMenu.userMenu" :key="i">
-                    <router-link :to="item.link">{{ item.name }}</router-link>
-                </div>
+        <router-link to="/Dashboard">
+                        {{ $t('message.Dashboard') }}
+                </router-link>
+                <router-link to="/WorkList">
+                       {{ $t('message.WorkList') }}
+                </router-link>
+                <router-link to="/Weather">
+                        {{ $t('message.Weather') }}
+                </router-link>
+                <router-link to="/setting">
+                        {{ $t('message.setting') }}
+                </router-link>
         </div>
     </div>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import { useMenuUser } from '@/stores/menu'
 const getUserName = localStorage.getItem('name')
-
-const reponMenu = useMenuUser()
 
 let show = ref(true)
 

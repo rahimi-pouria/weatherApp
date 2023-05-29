@@ -62,9 +62,13 @@ export const useCheckUser = defineStore('CheckUser', () => {
     let PasswordLogin = formState.password
     for (let i = 0; i < users.value.length; i++) { 
       if (users.value[i].name === userNameLogin && users.value[i].password === PasswordLogin) {
+        alert('sign in is successfuly')
+        setTimeout(() =>
         router.push('/Dashboard')
+          , 3000)
         localStorage.setItem("name", userNameLogin);
         localStorage.setItem("password", PasswordLogin)
+        
       } else { 
         alert('please sign in')
       }

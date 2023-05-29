@@ -20,9 +20,6 @@
 
 <script setup lang="ts">
 
-import { useMenuUser } from '@/stores/menu';
-
-const Menu = useMenuUser()
 </script>
 
 <style scoped>

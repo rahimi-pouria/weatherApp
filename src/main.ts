@@ -16,7 +16,6 @@ import "./assets/Fonts.css"
 import "./assets/Size.css"
 import "./assets/Reusble.css"
 
-//@ts-ignore
 import { createI18n } from 'vue-i18n'
 
 
